@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Ubuntu", sans-serif;
 }
 
 :root {
   --text-color: #ffffff;
-  --card-color: #b83232;
-  --reload-color: #ffffff;
-  --quote-color: #666666;
+  --card-color: #242424;
+  --secondary-textSize: 15px;
+  --main-textSize: 60px;
 }
 /*
 .darkMode{ 
@@ -26,22 +29,75 @@
   justify-content: center;
 }
 
-.clockContainer {
+.mainClockContainer {
   background-color: var(--card-color);
-  border-radius: 10px;
-  min-width: 340px;
-  min-height: 175px;
+  border-radius: 20px;
+  width: 240px;
+  height: 175px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.mainClockContainer::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 600px;
+  background: linear-gradient(#3fa7df, #9f25a1);
+  animation: animate 5s linear infinite;
+  filter: blur(3.5rem);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.clockContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #clockElement {
-  font-size: 50px;
+  font-size: var(--main-textSize);
+  color: var(--text-color);
+  z-index: 20;
+}
+#secondsElement {
+  padding-top: 20px;
+  font-size: 35px;
+  color: var(--text-color);
+  display: flex;
+  z-index: 20;
 }
 
-#weekElement {
-  font-size: 25px;
+.dayWMContainer {
+  display: flex;
+  gap: 5px;
+  z-index: 20;
+}
+
+#weekElement,
+#dayElement,
+#monthElement {
+  font-size: var(--secondary-textSize);
+  color: var(--text-color);
+}
+
+.mainClockContainer::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: var(--card-color);
+  border-radius: 20px;
+  z-index: 1;
 }

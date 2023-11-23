@@ -1,5 +1,6 @@
 function digitalClock() {
   const myClock = document.getElementById("clockElement");
+  const secondsClock = document.getElementById("secondsElement");
   const weekDayEl = document.getElementById("weekElement");
   const dayEl = document.getElementById("dayElement");
   const monthEl = document.getElementById("monthElement");
@@ -12,6 +13,22 @@ function digitalClock() {
   const dayOfWeek = clock.getDay();
   const dayOfMonth = clock.getDate();
   const month = clock.getMonth();
+
+  const mothName = [
+    "January",
+    "February",
+    "March",
+    " April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const currentMonth = mothName[month];
   const weekdays = [
     "Sunday",
     "Monday",
@@ -25,9 +42,11 @@ function digitalClock() {
   const currentDayOfWeek = weekdays[dayOfWeek];
   //console.log(`${hour}:${minutes}.${seconds}`);
 
-  myClock.innerHTML = `${hour}:${minutes}:${seconds}`;
+  myClock.innerHTML = `${hour}:${minutes}`;
+  secondsClock.innerHTML = `.${seconds}`;
   weekDayEl.innerHTML = `${currentDayOfWeek}`;
   dayEl.innerHTML = `${dayOfMonth}`;
+  monthEl.innerHTML = `${currentMonth}`;
 }
 digitalClock();
 setInterval(digitalClock, 1000);
