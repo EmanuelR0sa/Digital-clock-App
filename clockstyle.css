@@ -6,7 +6,7 @@
 
 :root {
   --text-color: #ffffff;
-  --card-color: #181818;
+  --card-color: #b83232;
   --reload-color: #ffffff;
   --quote-color: #666666;
 }
@@ -35,10 +35,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #clockElement {
-  position: absolute;
-  color: var(--text-color);
   font-size: 50px;
+}
+
+#weekElement {
+  font-size: 25px;
 }
