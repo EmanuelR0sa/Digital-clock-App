@@ -7,6 +7,9 @@
   font-family: "Ubuntu", sans-serif;
 }
 
+body {
+  background: #000000;
+}
 :root {
   --text-color: #ffffff;
   --card-color: #242424;
@@ -72,6 +75,7 @@
   color: var(--text-color);
   z-index: 20;
 }
+
 #secondsElement {
   padding-top: 20px;
   font-size: 35px;
@@ -82,8 +86,9 @@
 
 .dayWMContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  z-index: 20;
 }
 
 #weekElement,
@@ -91,6 +96,7 @@
 #monthElement {
   font-size: var(--secondary-textSize);
   color: var(--text-color);
+  z-index: 20;
 }
 
 .mainClockContainer::after {
@@ -100,4 +106,18 @@
   background: var(--card-color);
   border-radius: 20px;
   z-index: 1;
+}
+
+i {
+  color: white;
+  z-index: 20;
+  font-size: 30px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.view {
+  display: block;
 }
