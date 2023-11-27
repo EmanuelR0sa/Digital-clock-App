@@ -121,3 +121,20 @@ i {
 .view {
   display: block;
 }
+
+#icon:hover {
+  cursor: pointer;
+}
+
+#containerPomo {
+  z-index: 20;
+}
+
+#btn {
+  background-color: white;
+  font-size: var(--secondary-textSize);
+  border: none;
+  border-radius: 10px;
+  width: 60px;
+  padding: 4px;
+}
