@@ -41,8 +41,12 @@ function digitalClock() {
 
   const currentDayOfWeek = weekdays[dayOfWeek];
   //console.log(`${hour}:${minutes}.${seconds}`);
+  if (minutes < 10) {
+    myClock.innerHTML = `${hour}:0${minutes}`;
+  } else {
+    myClock.innerHTML = `${hour}:${minutes}`;
+  }
 
-  myClock.innerHTML = `${hour}:${minutes}`;
   secondsClock.innerHTML = `.${seconds}`;
   weekDayEl.innerHTML = `${currentDayOfWeek}`;
   dayEl.innerHTML = `${dayOfMonth}`;
@@ -50,30 +54,3 @@ function digitalClock() {
 }
 digitalClock();
 setInterval(digitalClock, 1000);
-
-const icon = document.getElementById("icon");
-const hideClock = document.getElementById("Container");
-const hidedayWM = document.getElementById("dayWMContainer");
-
-icon.addEventListener("click", () => {
-  document.body.classList.toggle("pomodoro");
-
-  if (document.body.classList.contains("pomodoro")) {
-    icon.className = "fa-solid fa-clock";
-    hideClock.className = "hidden";
-  } else {
-    icon.className = "fa-solid fa-stopwatch";
-    hideClock.className = "view";
-  }
-});
-
-/*
-hideClock.addEventListener("click", () => {
-  document.body.classList.toggle('hidden');
-  if (document.body.classList.contains("pomodoro")) {
-    icon.className = "fa-solid fa-clock";
-  } else {
-    icon.className = "fa-solid fa-stopwatch";
-  }
-});
-*/
